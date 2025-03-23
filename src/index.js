@@ -46,6 +46,16 @@ app.patch("/api/mentor/:id", async (req, res) => {
   }
 });
 
+app.delete("/api/mentor/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    const deleteData = await Mentor.findByIdAndDelete({ _id: id });
+    res.status(200).send(deleteData);
+  } catch (err) {
+    res.status(400).send(err);
+  }
+});
+
 app.listen(port, () => {
   console.log(`Server is running on PORT :${port}`);
 });
