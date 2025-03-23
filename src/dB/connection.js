@@ -1,6 +1,6 @@
-const mangoose = require('mongoose');
+const mongoose = require('mongoose');
 
 
-mangoose.connect("mangodb://localhost:27017")
+mongoose.connect("mongodb://localhost:27017/mentorship")
 .then(() => console.log("Connected to MongoDB..."))
 .catch((err)=> console.error(`Could not connect to MongoDB...${err}`));
